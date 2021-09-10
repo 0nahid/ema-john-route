@@ -16,7 +16,7 @@ const Cart = (props) => {
             <h4>Items Ordered : {cart.length} </h4>
             <h4>Total: ${formatNumber(total)} </h4>
             <h4>Shipping: ${formatNumber(shipping)}</h4>
-            <Link to='/review'><Button variant='dark'>Review Order</Button></Link>
+           <Link to='/review'><Button variant='dark'>Review Order</Button></Link>
         </div>
     );
 };

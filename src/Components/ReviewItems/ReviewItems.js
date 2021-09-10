@@ -1,21 +1,22 @@
 import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 const ReviewItems = (props) => {
-    const { name, quantity } = props.product;
+    const { name, quantity, key, img } = props.product;
     return (
-        <Col md={6} lg={4} className="p-3 mt-2">
-            <div className="shadow-sm  rounded p-3">
+        <>
+            <div className="shadow-sm mt-2  rounded p-3">
                 <Row>
-                    <Col lg={12} style={{ height: '12rem' }}>
-                        <h5>{name}</h5>
-                        <p>Quantity: {quantity}</p>
+                    <Col md={3}>
+                        <img className="w-75 h-75" src={img} alt={name} />
                     </Col>
-                    <Col lg={12}>
-                        <Button variant="warning">Remove</Button>
+                    <Col md={9}>
+                        <h6>{name}</h6>
+                        <p>Quantity: {quantity}</p>
+                        <Button onClick={() => props.removeItem(key)} variant="warning">Remove</Button>
                     </Col>
                 </Row>
             </div>
-        </Col>
+        </>
     );
 };
 

@@ -26,6 +26,7 @@ const Shop = () => {
                     showAddToCart={true}
                     key={product.key}
                     handleAddProduct={handleAddProduct}
+                    showReviews={false}
                 ></Product>)}
             </Row>
         </div>

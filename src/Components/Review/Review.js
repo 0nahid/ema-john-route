@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import fakeData from '../../fakeData';
-import { getDatabaseCart } from '../../utilities/databaseManager';
+import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import Cart from '../Cart/Cart';
 import ReviewItems from '../ReviewItems/ReviewItems';
 
 const Review = () => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+
+    // handle item remove
+    const removeItem = (productKey) => {
+        const newCart = cart.filter(pd => pd.key !== productKey);
+        setCart(newCart);
+        removeFromDatabaseCart(productKey);
+    }
     useEffect(() => {
         // cart
         const savedCart = getDatabaseCart();
@@ -18,14 +26,19 @@ const Review = () => {
         setCart(cartProducts);
     }, [])
     return (
-        <div>
+        <Row>
             <h1>Cart Item {cart.length} </h1>
-            <Row>
+
+            <Col md={8} >
                 {
-                    cart.map(pd => <ReviewItems product={pd} key={pd.key} ></ReviewItems>)
+                    cart.map(pd => <ReviewItems removeItem={removeItem} product={pd} key={pd.key} ></ReviewItems>)
                 }
-            </Row>
-        </div>
+            </Col>
+            <Col md={4}>
+                <Cart cart={cart} showReviews={true}></Cart>
+            </Col>
+
+        </Row>
     );
 };
 
