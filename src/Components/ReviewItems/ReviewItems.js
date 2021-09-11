@@ -12,7 +12,7 @@ const ReviewItems = (props) => {
                     <Col md={9}>
                         <h6>{name}</h6>
                         <p>Quantity: {quantity}</p>
-                        <Button onClick={() => props.removeItem(key)} variant="warning">Remove</Button>
+                        <Button onClick={() => props.removeItem(key)} variant="danger">Remove</Button>
                     </Col>
                 </Row>
             </div>
