@@ -6,9 +6,9 @@ import Product from '../Product/Product';
 import fakeData from './../../fakeData/index';
 
 const Shop = () => {
-    // const first20 = fakeData.slice(0, 20);
+    const first15 = fakeData.slice(0, 15);
     // eslint-disable-next-line
-    const [products, setProducts] = useState(fakeData);
+    const [products, setProducts] = useState(first15);
     const [cart, setCart] = useState([])
     const handleAddProduct = (product) => {
         const newCart = [...cart, product];
