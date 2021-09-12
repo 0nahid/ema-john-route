@@ -9,15 +9,14 @@ const Cart = (props) => {
         const precision = num.toFixed(2);
         return Number(precision);
     }
-    // const total = cart.reduce((total, product) => total = (total + (product.price * product.quantity)), 0);
+    const total = cart.reduce((total, product) => total = (total + (product.price * product.quantity)), 0);
 
-    let total = 0;
-    for (let i = 0; i < cart.length; i++) {
-        const product = cart[i];
-        total = total + product.price * product.quantity;
-        debugger;
-    }
-    console.log(total);
+    // let total = 0;
+    // for (let i = 0; i < cart.length; i++) {
+    //     const product = cart[i];
+    //     total = total + product.price * product.quantity;
+    // }
+    // console.log(total);
 
     const shipping = cart.reduce((shipping, product) => shipping = (shipping + product.shipping), 0);
     return (
