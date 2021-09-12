@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
     const cart = props.cart;
-    const total = cart.reduce((total, product) => total = (total + product.price), 0);
+    const total = cart.reduce((total, product) => total = (total + (product.price * product.quantity)), 0);
     const shipping = cart.reduce((shipping, product) => shipping = (shipping + product.shipping), 0);
     const formatNumber = num => {
         const precision = num.toFixed(2);

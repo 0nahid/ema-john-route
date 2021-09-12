@@ -5,7 +5,7 @@ import logo from '../../images/logo.png'
 const Header = () => {
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="light"  variant="light" sticky="top">
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top">
                 <Container>
                     <Navbar.Brand href="/">
                         <img alt="" src={logo} width="160" height="35" className="d-inline-block align-top"
@@ -15,7 +15,7 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link href="/shop">Shop</Nav.Link>
-                            <Nav.Link href="/review">Order Review</Nav.Link>
+                            <Nav.Link href="/review">Cart Item</Nav.Link>
                             <Nav.Link href="/manage">Manage Inventory</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

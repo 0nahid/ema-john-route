@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 const ReviewItems = (props) => {
-    const { name, quantity, key, img } = props.product;
+    const { name, quantity, key, img, price } = props.product;
     return (
         <>
             <div className="shadow-sm mt-2  rounded p-3">
@@ -11,6 +11,7 @@ const ReviewItems = (props) => {
                     </Col>
                     <Col md={9}>
                         <h6>{name}</h6>
+                        <p>Price: ${price}</p>
                         <p>Quantity: {quantity}</p>
                         <Button onClick={() => props.removeItem(key)} variant="danger">Remove</Button>
                     </Col>
