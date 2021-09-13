@@ -11,8 +11,8 @@ const Cart = ({ cart }) => {
   };
 
   const updateTotal = () => {
-    let prices = [],
-      totalPrice = 0;
+    let prices = [];
+    let totalPrice = 0;
 
     if (cart.length !== 0 || cart.length > 0) {
       cart.map((product) => prices.push(product.price));
